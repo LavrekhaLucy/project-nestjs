@@ -1,12 +1,15 @@
 import { Injectable } from '@nestjs/common';
 
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { UsersService } from '../users/users.service';
+import { CreateArticleDto } from './dto/create-article.dto';
+import { UpdateArticleDto } from './dto/update-article.dto';
 
 @Injectable()
-export class UsersService {
+export class ArticlesService {
+  constructor(private readonly usersService: UsersService) {}
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  create(createUserDto: CreateUserDto) {
+  create(dto: CreateArticleDto) {
+    this.usersService.checkAbilityToEditArticle('userId', 'articleId');
     return 'This action adds a new user';
   }
 
@@ -19,14 +22,11 @@ export class UsersService {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  update(id: number, updateUserDto: UpdateUserDto) {
+  update(id: number, updateUserDto: UpdateArticleDto) {
     return `This action updates a #${id} user`;
   }
 
   remove(id: number) {
     return `This action removes a #${id} user`;
-  }
-  public async checkAbilityToEditArticle(userId: string, articleId: string) {
-    return `This action updates a #${userId} article`;
   }
 }
