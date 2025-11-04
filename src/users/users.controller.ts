@@ -19,7 +19,7 @@ import {
 import { CreateUserReqDto } from './dto/req/create-user.req.dto';
 import { UpdateUserReqDto } from './dto/req/update-user.req.dto';
 import { UserListReqDto } from './dto/req/user-list.req.dto';
-import { CreateUserResDto } from './dto/res/user.res.dto';
+import { UserResDto } from './dto/res/user.res.dto';
 import { UsersService } from './users.service';
 
 @ApiBearerAuth()
@@ -37,9 +37,7 @@ export class UsersController {
   })
   @ApiNotFoundResponse({ description: 'User not found' })
   @Post()
-  async create(
-    @Body() createUserDto: CreateUserReqDto,
-  ): Promise<CreateUserResDto> {
+  async create(@Body() createUserDto: CreateUserReqDto): Promise<UserResDto> {
     return await this.usersService.create(createUserDto);
   }
 
