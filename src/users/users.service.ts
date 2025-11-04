@@ -6,7 +6,6 @@ import { UserResDto } from './models/dto/res/user.res.dto';
 
 @Injectable()
 export class UsersService {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public async create(createUserDto: CreateUserReqDto): Promise<UserResDto> {
     return {} as UserResDto;
   }
@@ -19,7 +18,6 @@ export class UsersService {
     return `This action returns a #${id} user`;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   update(id: number, updateUserDto: UpdateUserReqDto) {
     return `This action updates a #${id} user`;
   }
@@ -27,7 +25,8 @@ export class UsersService {
   remove(id: number) {
     return `This action removes a #${id} user`;
   }
+
   public async checkAbilityToEditArticle(userId: string, articleId: string) {
-    return `This action updates a #${userId} article`;
+    // Check if the user has permission to edit the article
   }
 }
