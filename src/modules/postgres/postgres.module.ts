@@ -22,12 +22,24 @@ import { DatabaseConfig } from '../../configs/config.type';
             path.join(
               process.cwd(),
               'dist',
+              'src',
               'database',
               'entities',
               '*.entity.js',
             ),
           ],
+          migrations: [
+            path.join(
+              process.cwd(),
+              'dist',
+              'src',
+              'database',
+              'migrations',
+              '*.js',
+            ),
+          ],
           synchronize: false,
+          migrationsRun: true,
         };
       },
       inject: [ConfigService],
