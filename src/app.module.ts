@@ -5,6 +5,7 @@ import configuration from './configs/configuration';
 import { ArticlesModule } from './modules/articles/articles.module';
 import { CommentsModule } from './modules/comments/comments.module';
 import { PostgresModule } from './modules/postgres/postgres.module';
+import { RedisModule } from './modules/redis/redis.module';
 import { UsersModule } from './modules/users/users.module';
 
 @Module({
@@ -14,6 +15,7 @@ import { UsersModule } from './modules/users/users.module';
       isGlobal: true,
     }),
     PostgresModule,
+    RedisModule,
     ArticlesModule,
     UsersModule,
     CommentsModule,
