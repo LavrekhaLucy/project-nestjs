@@ -1,3 +1,5 @@
+import './instruments/instrument';
+
 import * as console from 'node:console';
 
 import { ValidationPipe } from '@nestjs/common';
@@ -7,7 +9,6 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 import { AppModule } from './app.module';
 import { SwaggerHelper } from './common/helpers/swagger.helper';
-import { AppConfig } from './configs/config.type';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

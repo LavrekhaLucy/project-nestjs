@@ -28,7 +28,10 @@ export class UsersController {
   async create(@Body() createUserDto: CreateUserReqDto): Promise<UserResDto> {
     return await this.usersService.create(createUserDto);
   }
-
+  @Get('/debug-sentry')
+  getError() {
+    throw new Error('My first Sentry error!');
+  }
   @Get()
   findAll(@Query() query: UserListReqDto) {
     return this.usersService.findAll();
