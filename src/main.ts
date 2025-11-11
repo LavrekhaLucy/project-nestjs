@@ -1,5 +1,3 @@
-import './instruments/instrument';
-
 import * as console from 'node:console';
 
 import { ValidationPipe } from '@nestjs/common';
