@@ -31,3 +31,9 @@ export type SentryConfig = {
   env: string;
   debug: boolean;
 };
+export type JwtConfig = {
+  accessSecret: string;
+  accessExpiresIn: number;
+  refreshSecret: string;
+  refreshExpiresIn: number;
+};
