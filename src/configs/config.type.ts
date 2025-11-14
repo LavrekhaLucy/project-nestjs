@@ -4,6 +4,7 @@ export type Config = {
   redis: RedisConfig;
   aws: AwsConfig;
   sentry: SentryConfig;
+  jwt: JwtConfig;
 };
 
 export type AppConfig = {
