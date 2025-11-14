@@ -28,7 +28,7 @@ export class UserEntity extends CreateUpdateModel {
   @Column('text', { nullable: true })
   bio: string;
 
-  @Column('text', { nullable: true })
+  @Column('text')
   image: string;
 
   @OneToMany(() => RefreshTokenEntity, (entity) => entity.user)
