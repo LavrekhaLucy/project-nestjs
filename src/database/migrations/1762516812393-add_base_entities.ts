@@ -12,3 +12,4 @@ export class AddBaseEntities1762516812393 implements MigrationInterface {
     }
 
 }
+
